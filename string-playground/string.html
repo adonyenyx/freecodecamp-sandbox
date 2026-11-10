@@ -11,18 +11,19 @@
   <body>
 
     <main>
-      <form>
+      <form novalidate>
         <label for="userInput"></label>
         <input type="text" name="userInput" id="userInput" placeholder="Insert a String">
-        <button type="submit" id="btn">Submit</button>
+        <!-- <button type="submit" id="submitBtn">Submit</button> -->
       </form>
 
       <div>
-        <button id="upperCaseBtn">Upper Case</button>
-        <button id="lowerCaseBtn">Lower Case</button>
+        <button type="submit" id="upperCaseBtn">Upper Case</button>
+        <button type="submit" id="lowerCaseBtn">Lower Case</button>
       </div>
 
       <div class="display-user-input" id="displayUserInput">
+        <p id="inputResult"></p>
       </div>
 
 
