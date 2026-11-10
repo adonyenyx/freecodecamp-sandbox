@@ -1,14 +1,22 @@
-const input = document.querySelector("input"); 
-const randomBtn = document.getElementById("randomBtn");
-let numText = document.getElementById('numText'); 
 const form = document.querySelector('form'); 
+const input = document.querySelector("input"); 
+const numText = document.getElementById('numText'); 
+const randomBtn = document.getElementById("randomBtn");
+const multByTwoBtn = document.getElementById("multByTwo"); 
 
 
+let num; 
 
-function updateField(userInput){
-  numText.textContent = userInput;
+function updateNum(){
+  numText.textContent = num;
 }
 
-input.addEventListener('input', () => {
-  numText.textContent = input.value;
+input.addEventListener('input', () =>{
+  num = input.value;
+  updateNum();
 }); 
+
+multByTwoBtn.addEventListener('click', () => {
+  num *= 2;
+  updateNum();
+})
