@@ -18,16 +18,26 @@ const removeDeciBtn = document.getElementById("trunc");
 
 let num; 
 
-function updateNum(){n
+function updateNum(){
+  if(num === "" || Number.isNaN(num)){
+    numText.textContent = "Enter a Number!";
+    
+  }else{
   numText.textContent = num;
+  }
 }
 
 input.addEventListener('input', () =>{
-  num = input.value;
+  if(input.value === "") {
+    num = "";
+  } else {
+    num = +input.value;
+  }
+  updateNum(); 
 }); 
 
 randomBtn.addEventListener('click', () => {
-  num = (Math.random() * 100).toFixed(2); 
+  num = +(Math.random() * 100).toFixed(2); 
   updateNum(); 
 })
 
