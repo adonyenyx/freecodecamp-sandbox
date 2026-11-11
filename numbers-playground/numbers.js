@@ -7,19 +7,23 @@ const multByTwoBtn = document.getElementById("multByTwo");
 const divByTwoBtn = document.getElementById("divByTwo"); 
 const modTwoBtn = document.getElementById("modTwo"); 
 const roundBtn = document.getElementById("round"); 
+const roundUpBtn = document.getElementById("roundUp"); 
+const roundDownBtn = document.getElementById("roundDown"); 
+const removeDeciBtn = document.getElementById("trunc"); 
+
+
 
 
 
 
 let num; 
 
-function updateNum(){
+function updateNum(){n
   numText.textContent = num;
 }
 
 input.addEventListener('input', () =>{
   num = input.value;
-  updateNum();
 }); 
 
 randomBtn.addEventListener('click', () => {
@@ -32,4 +36,34 @@ multByTwoBtn.addEventListener('click', () => {
   updateNum();
 }); 
 
-//TODO: add: /, -, %, random, round, everything
+
+divByTwoBtn.addEventListener('click', () => {
+  num /= 2;
+  updateNum();
+}); 
+
+modTwoBtn.addEventListener('click', () => {
+  num %= 2;
+  updateNum();
+}); 
+
+roundBtn.addEventListener('click', () => {
+  num = Math.round(num); 
+  updateNum();
+}); 
+
+roundUpBtn.addEventListener('click', () => {
+  num = Math.ceil(num); 
+  updateNum();
+}); 
+
+roundDownBtn.addEventListener('click', () => {
+  num = Math.floor(num); 
+  updateNum();
+}); 
+
+removeDeciBtn.addEventListener('click', () => {
+  num = Math.trunc(num); 
+  updateNum();
+}); 
+
